@@ -5,5 +5,18 @@
 
 .chart-wrapper{
   border: 1px solid #ccc;
-  padding: 16px;
+  padding: 16px 0;
+  min-height: 200px;
+}
+
+
+/* OVERWRITE STUPID K**N STUFF*/
+.keen-loading{
+  display: none;
+}
+
+
+/* OVERWRITE STUPID concise STUFF*/
+.mega{
+  margin-top: 0;
 }

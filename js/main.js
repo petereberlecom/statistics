@@ -1,5 +1,6 @@
 'use strict';
 
+// create some variables here
 var totalResolved = {};
 
 
@@ -8,10 +9,8 @@ if (typeof client === 'undefined') {
   console.log('please add _config');
 }
 
-
 // here Starts the keen Stuff
 Keen.ready(function(){
-
 
   // get total number of npm requests
   var totalNpm = new Keen.Query("count", {
@@ -89,5 +88,40 @@ Keen.ready(function(){
     }
   });
 
+  // this is the big chart
+  var linePackages = new Keen.Query("count", {
+    eventCollection: "resolved",
+    groupBy: "registry",
+    interval: "hourly",
+    timeframe: "this_7_days",
+    timezone: "UTC"
+  });
+
+  client.draw(linePackages, document.getElementById('linePackages'),{
+    chartType: "linechart",
+    height: '200'
+  });
+
+  // top 10 all
+  var query = new Keen.Query("count", {
+    eventCollection: "resolved",
+    filters: [{"operator":"eq","property_name":"registry","property_value":"npm"}],
+    groupBy: "package",
+    targetProperty: "package",
+    timeframe: "this_2_years",
+    timezone: "UTC"
+  });
+
+  client.draw(query, document.getElementById('topAll'), {
+    chartType: 'table',
+    showRowNumber: true,
+    sortAscending: false,
+    sortColumn: 1,
+    cssClassNames : {
+      headerRow: 'bigAndBoldClass',
+      hoverTableRow: 'highlightClass'
+    },
+    pageSize: 15
+  });
 
 });
