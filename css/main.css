@@ -1,0 +1,9 @@
+.totals-wrapper{
+  /*border: 1px solid #ccc;*/
+  padding: 0 16px;
+}
+
+.chart-wrapper{
+  border: 1px solid #ccc;
+  padding: 16px;
+}
