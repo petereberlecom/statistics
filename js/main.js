@@ -112,16 +112,20 @@ Keen.ready(function(){
     timezone: "UTC"
   });
 
-  client.draw(query, document.getElementById('topAll'), {
-    chartType: 'table',
-    showRowNumber: true,
-    sortAscending: false,
-    sortColumn: 1,
-    cssClassNames : {
-      headerRow: 'bigAndBoldClass',
-      hoverTableRow: 'highlightClass'
-    },
-    pageSize: 15
+  client.run(query, function(error, response){
+    if (error) {
+      console.log('error');
+    }
+    else {
+      console.log(response);
+    }
   });
+
+  // client.draw(query, document.getElementById('topAll'), {
+  //   chartType: 'json',
+  //   sortColumn: 1,
+  //   sortAscending: false,
+  //   pageSize: 15
+  // });
 
 });
