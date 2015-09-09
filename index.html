@@ -8,82 +8,100 @@
     <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <div class="container">
 
-      <div class="row">
-        <div class="column-16">
-            <h1>Statistics<br><small>See the great numbers of *****</small></h1>
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="column-16">
+              <h1>Statistics<br><small>See the great numbers of *****</small></h1>
+          </div>
         </div>
       </div>
+    </header>
 
-      <div class="row gutters">
-        <div class="column-4 totals-wrapper">
-          <h2 class="mega"><small>all requests</small><br><span id="totalRequests">
-            <div class="sk-wave">
-              <div class="sk-rect sk-rect1"></div>
-              <div class="sk-rect sk-rect2"></div>
-              <div class="sk-rect sk-rect3"></div>
-              <div class="sk-rect sk-rect4"></div>
-              <div class="sk-rect sk-rect5"></div>
-            </div>
-          </span></h2>
+    <main>
+      <div class="container">
+        <div class="row gutters">
+          <div class="column-4 totals-wrapper">
+            <h1><small>all requests</small><br><span id="totalRequests">
+              <div class="sk-wave">
+                <div class="sk-rect sk-rect1"></div>
+                <div class="sk-rect sk-rect2"></div>
+                <div class="sk-rect sk-rect3"></div>
+                <div class="sk-rect sk-rect4"></div>
+                <div class="sk-rect sk-rect5"></div>
+              </div>
+            </span></h1>
+          </div>
+          <div class="column-4 totals-wrapper">
+            <h1><small>npm</small><br><span id="totalNpm">
+              <div class="sk-wave">
+                <div class="sk-rect sk-rect1"></div>
+                <div class="sk-rect sk-rect2"></div>
+                <div class="sk-rect sk-rect3"></div>
+                <div class="sk-rect sk-rect4"></div>
+                <div class="sk-rect sk-rect5"></div>
+              </div>
+            </span></h1>
+          </div>
+          <div class="column-4 totals-wrapper">
+            <h1><small>bower</small><br><span id="totalBower">
+              <div class="sk-wave">
+                <div class="sk-rect sk-rect1"></div>
+                <div class="sk-rect sk-rect2"></div>
+                <div class="sk-rect sk-rect3"></div>
+                <div class="sk-rect sk-rect4"></div>
+                <div class="sk-rect sk-rect5"></div>
+              </div>
+            </span></h1>
+          </div>
+          <div class="column-4 totals-wrapper">
+            <h1><small>composer</small><br><span id="totalComposer">
+              <div class="sk-wave">
+                <div class="sk-rect sk-rect1"></div>
+                <div class="sk-rect sk-rect2"></div>
+                <div class="sk-rect sk-rect3"></div>
+                <div class="sk-rect sk-rect4"></div>
+                <div class="sk-rect sk-rect5"></div>
+              </div>
+            </span></h1>
+          </div>
         </div>
-        <div class="column-4 totals-wrapper">
-          <h2 class="mega"><small>npm</small><br><span id="totalNpm">
-            <div class="sk-wave">
-              <div class="sk-rect sk-rect1"></div>
-              <div class="sk-rect sk-rect2"></div>
-              <div class="sk-rect sk-rect3"></div>
-              <div class="sk-rect sk-rect4"></div>
-              <div class="sk-rect sk-rect5"></div>
-            </div>
-          </span></h2>
+
+        <div class="row">
+          <div class="column-16 chart-wrapper" id="linePackages">
+          </div>
         </div>
-        <div class="column-4 totals-wrapper">
-          <h2 class="mega"><small>bower</small><br><span id="totalBower">
-            <div class="sk-wave">
-              <div class="sk-rect sk-rect1"></div>
-              <div class="sk-rect sk-rect2"></div>
-              <div class="sk-rect sk-rect3"></div>
-              <div class="sk-rect sk-rect4"></div>
-              <div class="sk-rect sk-rect5"></div>
-            </div>
-          </span></h2>
-        </div>
-        <div class="column-4 totals-wrapper">
-          <h2 class="mega"><small>composer</small><br><span id="totalComposer">
-            <div class="sk-wave">
-              <div class="sk-rect sk-rect1"></div>
-              <div class="sk-rect sk-rect2"></div>
-              <div class="sk-rect sk-rect3"></div>
-              <div class="sk-rect sk-rect4"></div>
-              <div class="sk-rect sk-rect5"></div>
-            </div>
-          </span></h2>
+
+        <div class="row">
+          <div class="column-8">
+            <table class="table table-full">
+              <thead>
+                <tr>
+                  <th><p>package</p></th>
+                  <th><p>resolved</p></th>
+                </tr>
+              </thead>
+
+              <tbody id="topAllTable">
+
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
+    </main>
 
-      <div class="row">
-        <div class="column-16 chart-wrapper" id="linePackages">
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="column-16">
+            <p>made with love</p>
+          </div>
         </div>
       </div>
+    </footer>
 
-      <div class="row">
-        <div class="column-8">
-          <table class="table table-full">
-            <thead>
-              <tr>
-                <th><p>package</p></th>
-                <th><p>resolved</p></th>
-              </tr>
-            </thead>
-
-            <tbody id="topAllTable">
-
-            </tbody>
-          </table>
-        </div>
-      </div>
 
     </div>
 

@@ -4,11 +4,20 @@
 }
 
 .chart-wrapper{
-  border: 1px solid #ccc;
   padding: 16px 0;
   min-height: 200px;
 }
 
+/*Layout*/
+.header{
+  background-color: #f1f1f1;
+}
+
+.footer{
+  background-color: #444;
+  color: white;
+  height: 200px;
+}
 
 /* OVERWRITE STUPID K**N STUFF*/
 .keen-loading{
