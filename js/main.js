@@ -1,5 +1,8 @@
 'use strict';
 
+// config variables
+var totallistSize = 10;
+
 // create some variables here
 var totalResolved = {};
 
@@ -21,8 +24,8 @@ Keen.ready(function(){
     timezone: "UTC"
   });
 
-  client.run(totalNpm, function(error, response){
-    if (error) {
+  client.run(totalNpm, function(err, response){
+    if (err) {
       $('#totalNpm').html('<small>not resolved</small>');
     }
     else {
@@ -40,8 +43,8 @@ Keen.ready(function(){
     timezone: "UTC"
   });
 
-  client.run(totalBower, function(error, response){
-    if (error) {
+  client.run(totalBower, function(err, response){
+    if (err) {
       $('#totalBower').html('<small>not resolved</small>');
     }
     else {
@@ -59,8 +62,8 @@ Keen.ready(function(){
     timezone: "UTC"
   });
 
-  client.run(totalComposer, function(error, response){
-    if (error) {
+  client.run(totalComposer, function(err, response){
+    if (err) {
       $('#totalComposer').html('<small>not resolved</small>');
     }
     else {
@@ -78,8 +81,8 @@ Keen.ready(function(){
     timezone: "UTC"
   });
 
-  client.run(totalRequests, function(error, response){
-    if (error) {
+  client.run(totalRequests, function(err, response){
+    if (err) {
       $('#totalRequests').html('<small>not resolved</small>');
     }
     else {
@@ -112,20 +115,23 @@ Keen.ready(function(){
     timezone: "UTC"
   });
 
-  client.run(query, function(error, response){
-    if (error) {
-      console.log('error');
+  client.run(query, function(err, response){
+    if (err) {
+      console.log('err');
     }
     else {
-      console.log(response);
+      let sortedList = _.sortBy(response.result, 'result');
+      sortedList = sortedList.reverse();
+      sortedList = _.first(sortedList, totallistSize);
+
+
+      var listTemplate = _.template($('#listTemplate').html() );
+      $('#topAllTable').append(listTemplate({ sortedList: sortedList}) );
+
+      $('#listTemplate');
+      $('#topAllTable'). _.template(sortedList);
     }
   });
 
-  // client.draw(query, document.getElementById('topAll'), {
-  //   chartType: 'json',
-  //   sortColumn: 1,
-  //   sortAscending: false,
-  //   pageSize: 15
-  // });
 
 });

@@ -85,6 +85,14 @@
 
               <tbody id="topAllTable">
 
+                <script id="listTemplate" type="text/template">
+                  <% _.each(sortedList, function(list) { %>
+                  <tr>
+                    <td><p><%= list.package %><p></td>
+                    <td><p><%= list.result %><p></td>
+                  </tr>
+                  <% }); %>
+                </script>
               </tbody>
             </table>
           </div>
@@ -107,7 +115,7 @@
 
     <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
     <script src="bower_components/keen-js/dist/keen-query.min.js" charset="utf-8"></script>
-    <script src="js/helpers.js" charset="utf-8"></script>
+    <script src="bower_components/underscore/underscore-min.js" charset="utf-8"></script>
     <script src="js/keen.js" charset="utf-8"></script>
     <script src="js/_config.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
