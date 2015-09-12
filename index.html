@@ -13,91 +13,112 @@
       <div class="container">
         <div class="row">
           <div class="column-16">
-              <h1>Statistics<br><small>See the great numbers of *****</small></h1>
+              <h1 class="kilo">Some Statistics<br><small>we have over <span id="totalRequests-single" class="numbers-block"> wait for it</span> resolved packages or dependencies</small></h1>
           </div>
         </div>
       </div>
     </header>
 
     <main>
-      <div class="container">
-        <div class="row gutters">
-          <div class="column-4 totals-wrapper">
-            <h1><small>all requests</small><br><span id="totalRequests">
-              <div class="sk-wave">
-                <div class="sk-rect sk-rect1"></div>
-                <div class="sk-rect sk-rect2"></div>
-                <div class="sk-rect sk-rect3"></div>
-                <div class="sk-rect sk-rect4"></div>
-                <div class="sk-rect sk-rect5"></div>
-              </div>
-            </span></h1>
+      <section class="section-part section--part-numbers">
+        <div class="container">
+          <div class="row">
+            <div class="columns-12">
+              <h2 class="kilo color-white">Here are all the numbers sorted by registries</h2>
+              <p>Pig ball tip tongue landjaeger biltong, bresaola pork chop. T-bone jowl pork belly, porchetta swine beef ribs tri-tip brisket. Pastrami fatback pig, chicken prosciutto jerky shank t-bone cow ground round venison meatloaf strip steak doner sirloin.</p>
+            </div>
           </div>
-          <div class="column-4 totals-wrapper">
-            <h1><small>npm</small><br><span id="totalNpm">
-              <div class="sk-wave">
-                <div class="sk-rect sk-rect1"></div>
-                <div class="sk-rect sk-rect2"></div>
-                <div class="sk-rect sk-rect3"></div>
-                <div class="sk-rect sk-rect4"></div>
-                <div class="sk-rect sk-rect5"></div>
-              </div>
-            </span></h1>
-          </div>
-          <div class="column-4 totals-wrapper">
-            <h1><small>bower</small><br><span id="totalBower">
-              <div class="sk-wave">
-                <div class="sk-rect sk-rect1"></div>
-                <div class="sk-rect sk-rect2"></div>
-                <div class="sk-rect sk-rect3"></div>
-                <div class="sk-rect sk-rect4"></div>
-                <div class="sk-rect sk-rect5"></div>
-              </div>
-            </span></h1>
-          </div>
-          <div class="column-4 totals-wrapper">
-            <h1><small>composer</small><br><span id="totalComposer">
-              <div class="sk-wave">
-                <div class="sk-rect sk-rect1"></div>
-                <div class="sk-rect sk-rect2"></div>
-                <div class="sk-rect sk-rect3"></div>
-                <div class="sk-rect sk-rect4"></div>
-                <div class="sk-rect sk-rect5"></div>
-              </div>
-            </span></h1>
+          <div class="row gutters">
+            <div class="column-4 totals-wrapper">
+              <h1><small>all requests</small><br><span id="totalRequests">
+                <div class="sk-wave">
+                  <div class="sk-rect sk-rect1"></div>
+                  <div class="sk-rect sk-rect2"></div>
+                  <div class="sk-rect sk-rect3"></div>
+                  <div class="sk-rect sk-rect4"></div>
+                  <div class="sk-rect sk-rect5"></div>
+                </div>
+              </span></h1>
+            </div>
+            <div class="column-4 totals-wrapper">
+              <h1><small>npm</small><br><span id="totalNpm">
+                <div class="sk-wave">
+                  <div class="sk-rect sk-rect1"></div>
+                  <div class="sk-rect sk-rect2"></div>
+                  <div class="sk-rect sk-rect3"></div>
+                  <div class="sk-rect sk-rect4"></div>
+                  <div class="sk-rect sk-rect5"></div>
+                </div>
+              </span></h1>
+            </div>
+            <div class="column-4 totals-wrapper">
+              <h1><small>bower</small><br><span id="totalBower">
+                <div class="sk-wave">
+                  <div class="sk-rect sk-rect1"></div>
+                  <div class="sk-rect sk-rect2"></div>
+                  <div class="sk-rect sk-rect3"></div>
+                  <div class="sk-rect sk-rect4"></div>
+                  <div class="sk-rect sk-rect5"></div>
+                </div>
+              </span></h1>
+            </div>
+            <div class="column-4 totals-wrapper">
+              <h1><small>composer</small><br><span id="totalComposer">
+                <div class="sk-wave">
+                  <div class="sk-rect sk-rect1"></div>
+                  <div class="sk-rect sk-rect2"></div>
+                  <div class="sk-rect sk-rect3"></div>
+                  <div class="sk-rect sk-rect4"></div>
+                  <div class="sk-rect sk-rect5"></div>
+                </div>
+              </span></h1>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="row">
-          <div class="column-16 chart-wrapper" id="linePackages">
+      <section class="section-part section--part-chart">
+        <div class="container">
+          <div class="row">
+            <div class="column-16">
+              <h3 class="kilo">See our growth</h3>
+              <p>Pig ball tip tongue landjaeger biltong, bresaola pork chop. T-bone jowl pork belly, porchetta swine beef ribs tri-tip brisket. Pastrami fatback pig, chicken prosciutto jerky shank t-bone cow ground round venison meatloaf strip steak doner sirloin.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column-16 chart-wrapper" id="linePackages">
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="row">
-          <div class="column-8">
-            <table class="table table-full">
-              <thead>
-                <tr>
-                  <th><p>package</p></th>
-                  <th><p>resolved</p></th>
-                </tr>
-              </thead>
-
-              <tbody id="topAllTable">
-
-                <script id="listTemplate" type="text/template">
-                  <% _.each(sortedList, function(list) { %>
+      <section class="section-part section--part-table">
+        <div class="container">
+          <div class="row">
+            <div class="column-16">
+              <h3 class="kilo">This is our top ten list</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column-16">
+              <table class="table table-full">
+                <thead>
                   <tr>
-                    <td><p><%= list.package %><p></td>
-                    <td><p><%= list.result %><p></td>
+                    <th>rank</th>
+                    <th>package</th>
+                    <th>resolved</th>
                   </tr>
-                  <% }); %>
-                </script>
-              </tbody>
-            </table>
+                </thead>
+
+                <tbody id="topAllTable">
+
+
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
 
     <footer class="footer">
@@ -110,6 +131,16 @@
       </div>
     </footer>
 
+    <!-- template -->
+    <script id="listTemplate" type="text/template">
+      <% _.each(sortedList, function(list, index) { %>
+      <tr>
+        <td><p><%= index + 1 %><p></td>
+        <td><p><%= list.package %><p></td>
+        <td><p><%= list.result %><p></td>
+      </tr>
+      <% }); %>
+    </script>
 
     </div>
 

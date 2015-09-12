@@ -1,7 +1,7 @@
 'use strict';
 
 // config variables
-var totallistSize = 10;
+var totalListSize = 10;
 
 // create some variables here
 var totalResolved = {};
@@ -87,6 +87,7 @@ Keen.ready(function(){
     }
     else {
       $('#totalRequests').html(response.result);
+      $('#totalRequests-single').html(response.result);
       totalResolved['total'] = response.result;
     }
   });
@@ -122,14 +123,11 @@ Keen.ready(function(){
     else {
       let sortedList = _.sortBy(response.result, 'result');
       sortedList = sortedList.reverse();
-      sortedList = _.first(sortedList, totallistSize);
+      sortedList = _.first(sortedList, totalListSize);
 
-
-      var listTemplate = _.template($('#listTemplate').html() );
+      let listTemplate = _.template($('#listTemplate').html() );
       $('#topAllTable').append(listTemplate({ sortedList: sortedList}) );
 
-      $('#listTemplate');
-      $('#topAllTable'). _.template(sortedList);
     }
   });
 

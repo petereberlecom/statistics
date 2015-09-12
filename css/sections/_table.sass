@@ -1,0 +1,27 @@
+.section--part-table
+  background-color: $color-green
+  z-index: 5
+  text-align: left
+
+  &::before,
+  &::after
+    content: ''
+    background-color: $color-green
+    transform: skewY(-3deg)
+    width: 100%
+    height: 400px
+    position: absolute
+    z-index: -1
+    overflow: hidden
+
+  &::before
+    top: -50px
+  &::after
+    bottom: -50px
+
+  .kilo,
+  h1
+    color: $color-white
+
+    small
+      color: $color-white
